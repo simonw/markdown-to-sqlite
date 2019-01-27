@@ -2,9 +2,9 @@ import click
 from pathlib import Path
 import sqlite3
 from sqlite_utils import Database
-import yamldown
-import markdown
 import hashlib
+import markdown
+import yamldown
 
 
 @click.command()
@@ -25,10 +25,11 @@ def cli(paths, dbname, table):
         metadata, text = yamldown.load(open(path))
         html = md.convert(text)
         doc = {
-            "_id": str(path),
+            "_id": hashlib.sha1(path.encode("utf8")).hexdigest(),
+            "_path": path,
             "text": text,
             "html": html,
-            **metadata,
+            **(metadata or {}),
         }
         docs.append(doc)
     db[table].upsert_all(docs, pk="_id")

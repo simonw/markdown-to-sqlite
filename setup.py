@@ -23,6 +23,9 @@ setup(
     license="Apache License, Version 2.0",
     packages=find_packages(),
     install_requires=["yamldown", "markdown", "sqlite-utils", "click"],
+    extras_require={"test": ["pytest"]},
+    tests_require=["markdown-to-sqlite[test]"],
+    setup_requires=["pytest-runner"],
     entry_points="""
         [console_scripts]
         markdown-to-sqlite=markdown_to_sqlite.cli:cli
