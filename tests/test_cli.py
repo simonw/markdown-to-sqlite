@@ -63,5 +63,5 @@ def test_basic(tmpdir):
     assert [{"twitter": "cleopaws"}] == json.loads(two["presenters"])
     assert 1 == one["accepted"]
     assert 0 == two["accepted"]
-    assert "2018-10-14 09:00:00" == one["date"]
-    assert "2018-11-14 09:00:00" == two["date"]
+    assert "2018-10-14T09:00:00" == one["date"]
+    assert "2018-11-14T09:00:00" == two["date"]
