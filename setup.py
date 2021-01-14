@@ -31,6 +31,11 @@ setup(
         markdown-to-sqlite=markdown_to_sqlite.cli:cli
     """,
     url="https://github.com/simonw/markdown-to-sqlite",
+    project_urls={
+        "Issues": "https://github.com/simonw/markdown-to-sqlite/issues",
+        "CI": "https://github.com/simonw/markdown-to-sqlite/actions",
+        "Changelog": "https://github.com/simonw/markdown-to-sqlite/releases",
+    },
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
@@ -41,4 +46,5 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
     ],
+    python_requires=">=3.6",
 )

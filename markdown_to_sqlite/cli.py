@@ -15,7 +15,7 @@ import yamldown
 def cli(paths, dbname, table):
     """
     Load markdown files into a SQLite database
-    
+
     https://github.com/simonw/markdown-to-sqlite
     """
     db = Database(dbname)
