@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import io
 import os
 
-VERSION = "0.1"
+VERSION = "0.2"
 
 
 def get_long_description():
@@ -37,7 +37,6 @@ setup(
         "Changelog": "https://github.com/simonw/markdown-to-sqlite/releases",
     },
     classifiers=[
-        "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "Intended Audience :: Science/Research",
         "Intended Audience :: End Users/Desktop",

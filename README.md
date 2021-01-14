@@ -8,8 +8,6 @@ CLI tool for loading markdown files into a SQLite database.
 
 YAML embedded in the markdown files will be used to populate additional columns.
 
-This is in extremely early stages of development - very much a 0.1.
-
     Usage: markdown-to-sqlite [OPTIONS] PATHS... DBNAME TABLE
 
 For example:
