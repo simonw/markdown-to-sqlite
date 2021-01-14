@@ -1,7 +1,7 @@
 # markdown-to-sqlite
 
 [![PyPI](https://img.shields.io/pypi/v/markdown-to-sqlite.svg)](https://pypi.python.org/pypi/markdown-to-sqlite)
-[![Travis CI](https://travis-ci.com/simonw/markdown-to-sqlite.svg?branch=master)](https://travis-ci.com/simonw/markdown-to-sqlite)
+[![Tests](https://github.com/simonw/markdown-to-sqlite/workflows/Test/badge.svg)](https://github.com/simonw/markdown-to-sqlite/actions?query=workflow%3ATest)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/simonw/markdown-to-sqlite/blob/master/LICENSE)
 
 CLI tool for loading markdown files into a SQLite database.
