@@ -9,8 +9,12 @@ CLI tool for loading markdown files into a SQLite database.
 
 YAML embedded in the markdown files will be used to populate additional columns.
 
-    Usage: markdown-to-sqlite [OPTIONS] PATHS... DBNAME TABLE
+    Usage: markdown-to-sqlite [OPTIONS] DBNAME TABLE PATHS...
 
 For example:
 
-    $ markdown-to-sqlite file1.md file2.md docs.db documents
+    $ markdown-to-sqlite docs.db documents file1.md file2.md
+
+## Breaking change
+
+Prior to version 1.0 this argument order was different - markdown files were listed before the database and table.

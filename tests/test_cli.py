@@ -39,10 +39,10 @@ def test_basic(tmpdir):
     result = CliRunner().invoke(
         cli.cli,
         [
-            str(tmpdir / "one.md"),
-            str(tmpdir / "two.md"),
             str(tmpdir / "info.db"),
             "talks",
+            str(tmpdir / "one.md"),
+            str(tmpdir / "two.md"),
         ],
     )
     db = Database(str(tmpdir / "info.db"))

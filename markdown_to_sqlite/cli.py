@@ -9,14 +9,14 @@ import yamldown
 
 @click.command()
 @click.version_option()
-@click.argument("paths", type=click.Path(exists=True), nargs=-1, required=True)
 @click.argument("dbname", nargs=1)
 @click.argument("table", nargs=1)
+@click.argument("paths", type=click.Path(exists=True), nargs=-1, required=True)
 def cli(paths, dbname, table):
     """
     Load markdown files into a SQLite database
 
-    https://github.com/simonw/markdown-to-sqlite
+    https://datasette.io/tools/markdown-to-sqlite
     """
     db = Database(dbname)
     md = markdown.Markdown()
