@@ -5,6 +5,7 @@ from sqlite_utils import Database
 import hashlib
 import markdown
 import yamldown
+from yaml.scanner import ScannerError
 
 
 @click.command()
@@ -22,14 +23,22 @@ def cli(paths, dbname, table):
     md = markdown.Markdown()
     docs = []
     for path in paths:
-        metadata, text = yamldown.load(open(path))
-        html = md.convert(text)
-        doc = {
-            "_id": hashlib.sha1(path.encode("utf8")).hexdigest(),
-            "_path": path,
-            "text": text,
-            "html": html,
-            **(metadata or {}),
-        }
+        try: 
+            metadata, text = yamldown.load(open(path))
+            html = md.convert(text)
+            doc = {
+                "_id": hashlib.sha1(path.encode("utf8")).hexdigest(),
+                "_path": path,
+                "text": text,
+                "html": html,
+                **(metadata or {}),
+            }
+        except (TypeError, ScannerError):
+            doc = {
+                "_id": hashlib.sha1(path.encode("utf8")).hexdigest(),
+                "_path": path,
+                "text": text,
+                "html": html,
+            }
         docs.append(doc)
     db[table].upsert_all(docs, pk="_id")
