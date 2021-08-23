@@ -8,6 +8,9 @@
 CLI tool for loading markdown files into a SQLite database.
 
 YAML embedded in the markdown files will be used to populate additional columns.
+See the [pandoc documentation](https://pandoc.org/MANUAL.html#metadata-variables)
+for more information. Only caveat is that the embedded YAML has to be
+terminated with `---` instead.
 
     Usage: markdown-to-sqlite [OPTIONS] DBNAME TABLE PATHS...
 
